@@ -1,0 +1,9 @@
+#production servers to install redis on
+#to use: ansible-playbook -i production redis.yml #assuming the `pwd` is this dir
+
+#[chicago]
+#somewhere.overtherainbow.com
+
+#[hugedatacenter]
+#123.123.123.123
+#124.124.124.124
