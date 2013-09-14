@@ -1,8 +1,8 @@
-#production servers to install redis on
+#test servers to install redis on
 #to use: ansible-playbook -i stage redis.yml #assuming the `pwd` is this dir
 
 #[chicago]
-#stage.overtherainbow.com
+#testing.overtherainbow.com
 
 #[testdatacenter]
 #1.2.3.4
