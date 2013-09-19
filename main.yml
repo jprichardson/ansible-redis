@@ -1,4 +1,4 @@
-#VERSION: 
+#VERSION: 0.0.1 
 
 ---
 - hosts: all
