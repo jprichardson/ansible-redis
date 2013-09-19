@@ -1,3 +1,0 @@
----
-- name: restart redis
-  service: redis stated=restarted
