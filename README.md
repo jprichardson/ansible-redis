@@ -40,7 +40,6 @@ Todo
 
 - make OS agnostic
 - add `vm.overcommit_memory` setting, see: http://ubuntuforums.org/showthread.php?t=1150453, http://www.redhat.com/magazine/001nov04/features/vm/, http://redis.io/topics/faq
-- make `redis-local` script work if no password is set
 
 
 
