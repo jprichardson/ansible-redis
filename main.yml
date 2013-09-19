@@ -1,0 +1,35 @@
+#VERSION: 
+
+---
+- hosts: all
+  vars_files:
+    - vars.yml
+  tasks:
+  - name: update apt
+    apt: update_cache=yes
+  - name: ensure packages installed
+    apt: pkg={{ item }} state=latest
+    with_items:
+      - make
+      - build-essential
+      - tcl8.5
+  - name: download latest stable redis
+    get_url: url=http://download.redis.io/redis-stable.tar.gz dest=/tmp/redis-stable.tar.gz
+  - name: untar redis
+    command: tar zxf /tmp/redis-stable.tar.gz -C /tmp
+  - name: build redis
+    command: make -C /tmp/redis-stable
+  - name: installing redis binaries
+    sudo: yes
+    command: cp /tmp/redis-stable/src/{{ item }} /usr/local/bin
+    with_items: 
+      - redis-server
+      - redis-cli
+      - redis-check-aof
+      - redis-check-dump
+  - name: cleaning up build files
+    command: rm -rf /tmp/{{ item }}
+    with_items:
+      - redis-stable
+      - redis-stable.tar.gz
+
