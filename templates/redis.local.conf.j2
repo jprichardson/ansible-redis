@@ -7,4 +7,9 @@ timeout 0
 loglevel notice
 logfile /var/log/redis.log
 dir /var/db/redis/
+
+{% if redis_password %}
+
 requirepass {{ redis_password }}
+
+{% endif %}

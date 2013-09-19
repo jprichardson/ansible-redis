@@ -2,4 +2,12 @@
 
 ### auth with local redis install
 
-redis-cli -p {{ redis_port }} -a {{ redis_password }}
+{% if redis_password %}
+  
+ redis-cli -p {{ redis_port }} -a {{ redis_password }}
+
+{% else %}
+
+redis-cli -p {{ redis_port }}
+
+{% endif %}
