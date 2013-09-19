@@ -1,9 +1,0 @@
-#test servers to install redis on
-#to use: ansible-playbook -i stage redis.yml #assuming the `pwd` is this dir
-
-#[chicago]
-#testing.overtherainbow.com
-
-#[testdatacenter]
-#1.2.3.4
-#77.77.77.88
