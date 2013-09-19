@@ -39,6 +39,9 @@
   - name: make sure that /var/db/redis exists
     file: path=/var/db/redis state=directory mode=0755 group=redis owner=redis
 
+  - name: make sure redis.log file exists
+    copy: src=templates/redis.log dest=/var/log/redis.log owner=redis group=redis mode=0644
+
   - name: copy upstart file
     copy: src=templates/upstart.conf dest=/etc/init/redis.conf
 
