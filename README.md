@@ -12,11 +12,11 @@ Create an inventory file with the servers that you want to Node.js on or use `$A
 
 if connecting with root:
 
-    ansible-playbook -i inventory-file -u root main.yml
+    ansible-playbook -i hosts -u root main.yml
 
 if sudoing:
 
-    ansible-playbook -i inventory-file -K main.yml
+    ansible-playbook -i hosts -K main.yml
 
 It installs a `redis-local` script that is useful to use instead of `redis-cli` if you set a different port and password.
 
